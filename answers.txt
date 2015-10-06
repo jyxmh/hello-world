@@ -7,7 +7,7 @@
   	(2) model.py line 51: ‘tring_to_deal_with_snake’: record the choice of player that whether to deal with snake
    	(3) model.py line 52: ‘lost_in_maze’: record  the status of player that whether he/she is lost in maze
    
-  Bad Examples with meaningful names: 
+  Bad Examples with not meaningful names: 
    	(1) game.py line 130: function: start2(): its name is very confusing and is different from what the function actually do
    	(2) game.py line 30: ‘impossible _treasures’: it records number of treasures that can never be found, so it is better named ‘impossible_treasure_number’
    	(3) game.py line 37: ‘turns’ : should be more specific
@@ -25,7 +25,6 @@
 4 function with side effect: data.py: line 146, section 7: def section7(data, n, room_n, *etc):
 	line 151 obj.drop(room) in this function,it drops ‘room’, if the following commands are no executed, it might cause side effect since room is dropped but room2 is not appended.
     	
-	
 5 repeated code: game.py: line 908 - line 938
   	the judgement sentence: “if obj is (bird/snake/dragon/bear) and self.is_here(parameter):” has repeated many times, we can make it a function meet_animal_judgement(para1,para2),
   	the return will be True or False
@@ -37,7 +36,6 @@
 		pass
   (2)Some inputs without output: ’!’,’#’,’@’,’$’,’%’,’^’,’(’,’+’,’)’,’&’ and their combinations usually get no output
      interrupt the program: ctrl + C
-
 
 7 many classes have responsibility over more than one piece of functionality: class Game() (game.py), class Data()(data.py)
   More specifically, in class Game(),it controls the light condition, start of the game, location, display instructions, operations of the dwarf, etc It contains too many functions and should be broken into more smaller classes
@@ -58,8 +56,6 @@
   Some bad comments:
 	(1)used as position marker: game.py line 1605: def start_closing_cave(self):  #10000
 	(2)redundant comments: game.py line:34: is_dead = False  # whether we are currently dead
-
-  
  
 10 example:adventure.py line 13 line 19
    vertical formatting:
@@ -76,11 +72,9 @@
  	(1)Fast: in my laptop, it costs only 0.055s, but the running time depends on the hardware devices and since the test include many errors, I can not decide whether it is fast
 	(2)Independent: Yes, each file is not depending on each other
    	(3)Repeatable: Yes, I can run them for many times with the same result
-	(4)Self-validating: as the result shows, several tests have errors and we can not decide whether the tests are satisfy this item
+	(4)Self-validating: as the result shows, several tests have errors and we can not decide whether the tests satisfy this item
 	(5)Timely: No. According to the changelog:
    		1.0 — 2011 February 15 — 100% test coverage, feature-complete
 		0.3 — 2011 January 31 — first public release
     	   The first public release date is 2011 January 31, and the 100% test coverage date is 2011 February 15
-      
-   
    
